@@ -1,0 +1,4 @@
+<h1><i class="icon-backward" ng-click='previousDate()'></i>Menu du {{menu.date | date:'dd/MM/yyyy'}} <i class="icon-edit" ng-click="editMenu()"></i> <i class="icon-forward" ng-click='nextDate()'></i></h1>
+<ul ng-repeat="plat in menu.plats | orderBy:'type.order'">
+	<li>{{plat.name}} (<i>{{plat.type.name}}</i>)</li>
+</ul>
