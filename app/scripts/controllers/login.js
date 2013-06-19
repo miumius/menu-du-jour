@@ -20,7 +20,7 @@ angular.module('menuDuJourApp')
 	})
 	.controller('LogoutCtrl', function($scope, $window, $location, $http, $log){
 		$http.get('/auth/logout')
-		.success(function(){	
+		.success(function(){
 			$log.log('déconnexion réussi');
 			$location.path('/');
 		})
