@@ -1,0 +1,19 @@
+{
+  "name": "menu-du-jour",
+  "version": "1.0.0",
+  "main": "app/scripts/app.js",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt"
+  ],
+  "dependencies": {
+    "angular": "~1.x",
+    "angular-cookies": "~1.x",
+    "angular-mocks": "~1.x",
+    "angular-resource": "~1.x",
+    "angular-sanitize": "~1.x",
+    "angular-scenario": "~1.x",
+    "angular-ui-date": "~0.x",
+    "es5-shim": "~2.x"
+  }
+}
