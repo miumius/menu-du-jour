@@ -13,7 +13,7 @@
     "angular-resource": "~1.x",
     "angular-sanitize": "~1.x",
     "angular-scenario": "~1.x",
-    "angular-ui-date": "~0.x",
+    "angular-ui-date": "0.0.2",
     "angular-bootstrap": "~0.x",
     "es5-shim": "~2.x"
   }
