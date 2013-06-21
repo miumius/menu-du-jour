@@ -1,0 +1,18 @@
+<div class="container row">
+      <!--Sidebar content-->
+  <!--Body content-->
+  <div id="plats" class="span5">
+    <h1>Plats disponibles</h1>    
+    <input type="text" ng-model="search.name" placeholder="Saisissez ici le plat à ajouter">
+    <button class="btn" ng-click="createPlat(search.name)">Créer le plat</button>
+    <ul>
+      <li ng-repeat="plat in plats | filter:search" ng-show="search.name.length >= 1" ng-click="addPlat(plat)"><p ng-bind-html-unsafe="plat.name | highlight:search.name:false"></p></li>
+    </ul>    
+  </div>
+  <div id="menu" class="span6">
+    <h1>Menu du <input type="text" ng-model="menu.date" ui-date="" ui-date-format="" ng-change="changeDate()"></h1>
+    <ul ng-model="menu">
+      <li ng-repeat="plat in menu.plats | orderBy:'type.order'">{{plat.name}} ( <i>{{plat.type.name}}</i>) <i class="icon-trash" ng-click="removePlat(plat)"></i></li>
+    </ul>
+  </div>
+</div>

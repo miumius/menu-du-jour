@@ -1,0 +1,38 @@
+<div ng-controller="UsersCtrl">
+	<form name="userForm">		
+		<table class="table table-striped">
+			<thead>
+				<th>Nom</th>
+				<th>Rôle</th>
+				<th>Valider</th>
+				<th>Supprimer</th>
+			</thead>
+			<tr ng-repeat="user in users | orderBy:'user.name'">			
+					
+				</tr></table></form>
+				<td>{{user.name}}</td>
+				<td>
+					<select ng-model="selectRole[user._id]" ng-options="role._id as role.libelle for role in roles">
+					</select>
+				</td>
+				<td>
+					<button ng-disabled="selectRole[user._id] == user.role._id" ng-click="updateUser(user._id, selectRole[user._id])" class="btn btn-primary">Update</button>
+				</td>
+				<td>
+					<i class="icon-trash" ng-click="deleteUser(user._id)"></i>
+				</td>
+			
+			<tr>
+				<td><input required="" name="newUserName" ng-model="newUser.name" type="text" placeholder="Nom"></td>
+				<td>
+					<select name="newUserRole" required="" ng-model="newUser.role" ng-options="role._id as role.libelle for role in roles">
+						<option value="">-- choisissez un rôle --</option>			
+					</select>
+				</td>
+				<td colspan="2">
+					<button ng-disabled="userForm.$invalid" class="btn btn-primary" ng-click="addUser()">Ajouter</button>
+				</td>
+			</tr>
+		<table>
+	
+</table></div>

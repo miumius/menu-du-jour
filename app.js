@@ -37,12 +37,16 @@ app.use(express.session({	store : sessionStore,
 
 //app.use(casValidate.ticket({'cas_host':'intranet2', 'service':'http://localhost:9000/'}));
 app.use(app.router);
-
+console.log(app.get('env'));
 if ('development' === app.get('env')) {
 	// use livereload middleware
 	app.use(require('grunt-contrib-livereload/lib/utils').livereloadSnippet);
 	app.use(express.static(path.join(__dirname, '.tmp')));
 	app.use(express.static(path.join(__dirname, 'app')));
+	app.use(express.errorHandler());
+}
+if ('production' === app.get('env')) {
+	app.use(express.static(path.join(__dirname, 'dist')));
 	app.use(express.errorHandler());
 }
 

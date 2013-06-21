@@ -1,0 +1,22 @@
+<div ng-controller="LoginCtrl">
+	<form name="userForm">
+		<fieldset>
+			<legend>Veuillez vous identifier</legend>
+			    <div class="alert alert-error" ng-show="loginErrorMessage.length > 0">
+    				<button type="button" class="close" data-dismiss="alert">&times;</button>
+    				{{loginErrorMessage}}
+    			</div>
+			<div class="control-group">
+				<label class="control-label" for="userName">Identifiant</label>
+				<input required="" name="userName" ng-model="user.name" type="text" placeholder="Saisissez votre identifiant AGATE">
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="userName">Mot de passe</label>
+				<input required="" name="userPassword" ng-model="user.password" type="password" placeholder="Saisissez votre mot de passe AGATE">
+			</div>
+			<div class="control-group">
+				<button ng-disabled="userForm.$invalid" class="btn btn-primary" ng-click="authentification()">identification</button>
+			</div>
+		</fieldset>
+	</form>
+</div>

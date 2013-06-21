@@ -1,0 +1,15 @@
+<form name="form">
+<div class="modal-header">	    
+    <h3>Créer un plat</h3>
+</div>
+<div class="modal-body">
+	<input ng-model="plat.name" type="text" placeholder="Nom du plat" required="">
+	<select ng-model="plat.type" ng-options="type.name for type in types" required="">
+		<option value="">-- Type de plat --</option>		
+	</select>
+</div>
+<div class="modal-footer">
+	<button class="btn" ng-click="close()">Annuler</button>
+	<button class="btn btn-primary" ng-click="create(plat)" ng-disabled="form.$invalid">Créer le plat</button>
+</div>
+</form>
