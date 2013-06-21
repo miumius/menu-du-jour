@@ -3,7 +3,10 @@ var https = require('https'),
 	querystring = require('querystring');
 
 exports.login = function (req, res){
-	var data = querystring.stringify({
+	req.session.ticket = "n@@bz";
+	req.session.name = "naabz";
+	res.send(200);
+	/*var data = querystring.stringify({
 		username: req.param('username'),
 		password: req.param('password')
 	});
@@ -45,11 +48,14 @@ exports.login = function (req, res){
 	});
 
 	request.write(data);
-	request.end();
+	request.end();*/
 };
 
 exports.logout = function(req, res){
-	var options = {
+	req.session.destroy();
+		//response.setEncoding('utf8');
+	res.send(200);
+	/*var options = {
 		host: 'intranet2',
 		path: '/cas/v1/tickets/' + req.session.ticket,
 		method: 'DELETE',
@@ -67,7 +73,7 @@ exports.logout = function(req, res){
 		});
 	});
 
-	request.end();
+	request.end();*/
 };
 
 exports.authenticationRequired = function(req, res, next){
